@@ -1,0 +1,83 @@
+html {
+	box-sizing: border-box;
+	-web-font-smoothing: antialiased;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0 0 auto;
+}
+
+#bodyDiv {
+	width: 60em;
+	margin-left: 150px;
+}
+
+div {
+	border: 2px solid black;
+}
+
+#header {
+	text-align: center;
+	height: 128px;
+}
+
+#happyFacePic {
+	padding-top: 15px;
+	height: 100px;
+}
+
+#mlLogoPic {
+	padding-top: 15px;
+	height: 50px;
+}
+
+#happyFace {
+	height: 125px;
+	float: left;
+	width: 25%;
+}
+
+#mlLogo {
+	height: 125px;
+	float: right;
+	width: 75%;
+}
+
+h1 {
+	margin-top: 0px;
+	font-size: 50px;
+}
+
+h2 {
+	margin-top: 40px;
+	margin-bottom: 0px;
+}
+
+input {
+	margin: 15px 30px;
+}
+
+#inputs {
+	border: none;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+#inputsDiv {
+	height: 300px;
+}
+
+#paragraphs {
+	height: 400px;
+	font-size: 30px;
+	text-align: justify;
+}
+
+p {
+	padding: 10px 40px;
+}
+
