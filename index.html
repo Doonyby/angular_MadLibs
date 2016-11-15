@@ -7,8 +7,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script src="./module.js"></script>
 </head>
-<body ng-controller="myCtrl">
-	{{something}}
+<body ng-controller="myCtrl as vm">
+	{{something}} </br>
+	{{vm.title}}
 	<div id="bodyDiv">
 		<div id="header">
 			<div id="happyFace">
