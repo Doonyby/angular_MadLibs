@@ -5,11 +5,11 @@
 	<title>NG Mad Libs</title>
 	<link rel="stylesheet" type="text/css" href="./style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="./lib/angular-messages.min.js"></script>
 	<script src="./module.js"></script>
 </head>
 <body ng-controller="myCtrl as vm">
-	{{something}} </br>
-	{{vm.title}}
+	{{ vm.data.adjective }}
 	<div id="bodyDiv">
 		<div id="header">
 			<div id="happyFace">
@@ -20,24 +20,38 @@
 				<h1>Automate This!</h1>
 			</div>
 		</div>
-		<div id="inputsDiv">
+		<div id="inputsDiv" ng-show="!vm.screenSwitch">
 			<div id="inputs">
 				<h2>Provide the following words:</h2>
-				<input type="text" placeholder="female name" ng-model="femaleName" />
-				<input type="text" placeholder="job title" ng-model="jobTitle" />
-				<input type="text" placeholder="tedious task" ng-model="tediousTask" />
-				<input type="text" placeholder="dirty task" ng-model="dirtyTask" />
-				<input type="text" placeholder="celebrity" ng-model="celebrity" />
-				<input type="text" placeholder="useless skill" ng-model="uselessSkill" />
-				<input type="text" placeholder="obnoxious celebrity" ng-model="obnoxiousCelebrity" />
-				<input type="text" placeholder="huge number" ng-model="hugeNumber" />
-				<input type="text" placeholder="adjective" ng-model="adjective" />
+				<form name="vm.myForm" ng-submit="vm.submit()" novalidate>
+					<input type="text" name="femaleName" placeholder="female name" ng-model="vm.femaleName" required/>
+<!-- 					<span ng-if="vm.myForm.$submitted" ng-messages="vm.myForm.femaleName.$error">
+					    <span ng-if="vm.myForm.$submitted" ng-messages="vm.myForm.femaleName.$error" class="error" ng-message="required">Field is required!</span>
+					</span>
+ -->					<input type="text" name="jobTitle" placeholder="job title" ng-model="vm.jobTitle" required/>
+<!-- 					<span ng-if="vm.myForm.$submitted" ng-messages="vm.myForm.jobTitle.$error">
+					    <span class="error" ng-message="required">Field is required!</span>
+					</span>	 -->				
+					<input type="text" name="tediousTask" placeholder="tedious task" ng-model="vm.tediousTask" required/>				
+					<input type="text" name="dirtyTask" placeholder="dirty task" ng-model="vm.dirtyTask" required/>				
+					<input type="text" name="celebrity" placeholder="celebrity" ng-model="vm.celebrity" required/>			
+					<input type="text" name="uselessSkill" placeholder="useless skill" ng-model="vm.uselessSkill" required/>				
+					<input type="text" name="obnoxious" placeholder="obnoxious celebrity" ng-model="vm.obnoxious" required/>								
+					<input type="text" name="adjective" placeholder="adjective" ng-model="vm.adjective" required/>
+					<input type="number" name="hugeNumber" placeholder="huge number" ng-model="vm.hugeNumber" min="500" required/>
+					<span ng-if="vm.myForm.$submitted" ng-messages="vm.myForm.hugeNumber.$error">
+					    <span class="error" ng-message="min">Enter number above 500!</span>
+					</span>
+					<p ng-model=vm.errorExplanation ng-show="vm.redBox" style="color: red;">* Red boxes are required.</p><hr>						
+					<button type="submit" style="float: right;">Generate Mad Lib</button>
+				</form>
 			</div>
 		</div>	
-		<div id="paragraphs">
-			<p>{{femaleName}} was a {{jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so she studied programming instead.</p>
+		<div id="paragraphs" ng-show="vm.screenSwitch">
+			<p>{{vm.femaleName}} was a {{vm.jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated {{vm.tediousTask}} and {{vm.dirtyTask}}. So, {{vm.femaleName}} met with her life mentor {{vm.celebrity}} who told her to learn how to {{vm.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{vm.uselessSkill}} so she studied programming instead.</p>
 
-			<p>What a great decision! With her new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} times faster.</p>
+			<p>What a great decision! With her new skills, {{vm.femaleName}} built a(n) {{vm.adjective}} robot named {{vm.obnoxious}} that not only loved {{vm.dirtyTask}} but did it {{vm.hugeNumber}} times faster.</p>
+			<button ng-click="vm.resetMadLib()" style="float: right;">Start Over</button>
 		</div>
 	</div>	
 </body>
