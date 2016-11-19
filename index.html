@@ -5,6 +5,7 @@
 	<title>NG Mad Libs</title>
 	<link rel="stylesheet" type="text/css" href="./style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-animate.js"></script>
 	<script src="./lib/angular-messages.min.js"></script>
 	<script src="./module.js"></script>
 </head>
@@ -25,16 +26,10 @@
 				<h2>Provide the following words:</h2>
 				<form name="vm.myForm" ng-submit="vm.submit()" novalidate>
 					<input type="text" name="femaleName" placeholder="female name" ng-model="vm.femaleName" required/>
-<!-- 					<span ng-if="vm.myForm.$submitted" ng-messages="vm.myForm.femaleName.$error">
-					    <span ng-if="vm.myForm.$submitted" ng-messages="vm.myForm.femaleName.$error" class="error" ng-message="required">Field is required!</span>
-					</span>
- -->					<input type="text" name="jobTitle" placeholder="job title" ng-model="vm.jobTitle" required/>
-<!-- 					<span ng-if="vm.myForm.$submitted" ng-messages="vm.myForm.jobTitle.$error">
-					    <span class="error" ng-message="required">Field is required!</span>
-					</span>	 -->				
+					<input type="text" name="jobTitle" placeholder="job title" ng-model="vm.jobTitle" required/>
 					<input type="text" name="tediousTask" placeholder="tedious task" ng-model="vm.tediousTask" required/>				
 					<input type="text" name="dirtyTask" placeholder="dirty task" ng-model="vm.dirtyTask" required/>				
-					<input type="text" name="celebrity" placeholder="celebrity" ng-model="vm.celebrity" required/>			
+					<input type="text" name="celebrity" placeholder="celebrity" ng-model="vm.celebrity" required/>
 					<input type="text" name="uselessSkill" placeholder="useless skill" ng-model="vm.uselessSkill" required/>				
 					<input type="text" name="obnoxious" placeholder="obnoxious celebrity" ng-model="vm.obnoxious" required/>								
 					<input type="text" name="adjective" placeholder="adjective" ng-model="vm.adjective" required/>
