@@ -12,8 +12,8 @@ body {
 }
 
 #bodyDiv {
-	width: 60em;
-	height: 100%;
+	width: 956px;
+	height: 528px;
 	margin-left: 150px;
 	overflow: hidden;
 }
@@ -70,20 +70,24 @@ input {
 }
 
 #inputsDiv {
+	margin: none;
 	height: 400px;
 	overflow: hidden;
 	transition: all 3s linear;
 }
 
-#inputsDiv.ng-hide-add {
+#inputsDiv.ng-hide-add,
+#paragraphs.ng-hide-add {
 	margin-left: 0;
 }
 
-#inputsDiv.ng-hide-add-active {
+#inputsDiv.ng-hide-add-active,
+#paragraphs.ng-hide-add-active {
 	margin-left: 1000px;
 }
 
 #paragraphs {
+	margin: none;
 	height: 400px;
 	font-size: 30px;
 	text-align: justify;
@@ -91,11 +95,13 @@ input {
 	transition: all 3s linear;
 }
 
-#paragraphs.ng-hide-remove {
+#paragraphs.ng-hide-remove,
+#inputsDiv.ng-hide-remove {
 	margin-right: 1000px;
 }
 
-#paragraphs.ng-hide-remove-active {
+#paragraphs.ng-hide-remove-active,
+#inputsDiv.ng-hide-remove-active {
 	margin-right: 0;
 }
 
