@@ -16,6 +16,7 @@ body {
 	height: 528px;
 	margin-left: 150px;
 	overflow: hidden;
+	position: relative;
 }
 
 div {
@@ -70,9 +71,10 @@ input {
 }
 
 #inputsDiv {
-	margin: none;
 	height: 400px;
 	overflow: hidden;
+	position: absolute;
+	top: 128px;
 	transition: all 3s linear;
 }
 
@@ -83,21 +85,22 @@ input {
 
 #inputsDiv.ng-hide-add-active,
 #paragraphs.ng-hide-add-active {
-	margin-left: 1000px;
+	margin-left: 952px;
 }
 
 #paragraphs {
-	margin: none;
 	height: 400px;
 	font-size: 30px;
 	text-align: justify;
 	overflow: hidden;
+	position: absolute;
+	top: 128px;
 	transition: all 3s linear;
 }
 
 #paragraphs.ng-hide-remove,
 #inputsDiv.ng-hide-remove {
-	margin-right: 1000px;
+	margin-right: 952px;
 }
 
 #paragraphs.ng-hide-remove-active,
